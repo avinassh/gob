@@ -11,6 +11,14 @@ class JobListView(ListView):
     model = Job
 
 
+# List jobs by the current logged in user
+class JobUserListView(ListView):
+    model = Job
+
+    def get_queryset(self):
+        return super().get_queryset().filter(added_by=self.request.user)
+
+
 class JobCreateView(CreateView):
     model = Job
     form_class = JobCreateForm

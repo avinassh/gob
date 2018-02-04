@@ -1,11 +1,54 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Jobs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Job Board</title>
+    <meta name="description" content="A very simple job board">
+    <meta name="keywords" content="job, job board">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" integrity="sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=" crossorigin="anonymous" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-  {% block content %}
-  {% endblock %}
+
+  <nav class="navbar is-link">
+    <div class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          {% if user.is_authenticated %}
+          <p class="control">
+            <a class="button is-white" href="{% url 'jobs:jobs-add' %}">Add</a>
+          </p>
+          <p class="control">
+            <a class="button is-white" href="#login">Edit</a>
+          </p>
+          {% else %}
+          <p class="control">
+            <a class="button is-white" href="{% url 'jobs:login' %}">Login</a>
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+ <br>
+
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+ <br>
+
+<footer class="level">
+  <div class="level-left"></div>
+  <div class="level-right">
+    <p class="level-item">built using gob &nbsp;</p>
+  </div>
+</footer>
+
+
 </body>
-</html>

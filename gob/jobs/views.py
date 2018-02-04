@@ -46,3 +46,6 @@ class JobUpdateView(UpdateView):
     model = Job
     form_class = JobCreateForm
     success_url = '/'
+
+    def get_queryset(self):
+        return super().get_queryset().filter(added_by=self.request.user)

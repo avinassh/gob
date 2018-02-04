@@ -10,6 +10,9 @@ from gob.jobs.forms import JobCreateForm, JobUpdateForm
 class JobListView(ListView):
     model = Job
 
+    def get_queryset(self):
+        return super().get_queryset().filter(status=True)
+
 
 # List jobs by the current logged in user
 class JobUserListView(ListView):

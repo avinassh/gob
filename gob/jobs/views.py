@@ -12,6 +12,7 @@ class JobListView(ListView):
 class JobCreateView(CreateView):
     model = Job
     form_class = JobCreateForm
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.added_by = self.request.user

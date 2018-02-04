@@ -12,5 +12,6 @@ class Job(TimeStampMixin):
     salary_start = models.PositiveIntegerField()
     salary_end = models.PositiveIntegerField(null=True)
     status = models.BooleanField(default=True)
+    message_url = models.URLField()
 
     added_by = models.ForeignKey(User, on_delete=models.CASCADE)

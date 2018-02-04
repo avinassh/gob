@@ -126,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
 
 # Use either `slack` or `reddit` for login
 OAUTH_LOGIN_PROVIDER = 'reddit'

@@ -23,6 +23,7 @@ class JobCreateView(CreateView):
     model = Job
     form_class = JobCreateForm
     success_url = '/'
+    template_name = 'jobs/job_form_create.html'
 
     def form_valid(self, form):
         message_url = self._get_message_url()

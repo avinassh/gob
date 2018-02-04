@@ -7,6 +7,7 @@ from gob.jobs.models import Job
 class JobCreateForm(ModelForm):
     company_name = forms.CharField(required=False, max_length=20)
     location = forms.CharField(required=True, max_length=20)
+    description = forms.CharField(required=True, max_length=160)
     salary_end = forms.IntegerField(required=False)
 
     def clean(self):

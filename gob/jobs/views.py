@@ -14,7 +14,5 @@ class JobCreateView(CreateView):
     form_class = JobCreateForm
 
     def form_valid(self, form):
-        import ipdb; ipdb.set_trace()
-
-    def form_invalid(self, form):
-        import ipdb; ipdb.set_trace()
+        form.instance.added_by = self.request.user
+        return super().form_valid(form)

@@ -11,5 +11,6 @@ class Job(TimeStampMixin):
     location = models.CharField(max_length=80)
     salary_start = models.PositiveIntegerField()
     salary_end = models.PositiveIntegerField(null=True)
+    status = models.BooleanField(default=True)
 
     added_by = models.ForeignKey(User, on_delete=models.CASCADE)

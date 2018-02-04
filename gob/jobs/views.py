@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 from django.views.generic.edit import CreateView
 from django.conf import settings
 from django.http import HttpResponseBadRequest
@@ -40,3 +40,9 @@ class JobCreateView(CreateView):
             return F"https://www.reddit.com/message/compose/?to={uid}"
         else:
             return
+
+
+class JobUpdateView(UpdateView):
+    model = Job
+    form_class = JobCreateForm
+    success_url = '/'

@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="tile is-ancestor">
   {% for job in object_list %}
-    <p>{{ job.description }}</p>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <div class="content">
+        <p>{{ job.description }}</p>
+      </div>
+      <p>&#8377;{{ job.salary_start }}{% if job.salary_end %} - &#8377;{{ job.salary_end }}{% endif %} | <i class="fas fa-map-marker-alt"></i> {{ job.location }} | <a href="{{ job.message_url }}"><i class="fas fa-comments"></i></a>
+      </p>
+    </article>
+  </div>
+  {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="tile is-ancestor">
+  {% endif %}
   {% endfor %}
+</div>
 {% endblock %}

@@ -131,3 +131,12 @@ LOGIN_REDIRECT_URL = '/'
 # Use either `slack` or `reddit` for login
 OAUTH_LOGIN_PROVIDER = 'reddit'
 SLACK_TEAM_ID = 'dev-s'
+
+# TODO:
+# /accounts/ is hardcoded here
+# this always assumes allauth URLs are set at /accounts/
+# any change here should also reflect in main `urls.py`
+if OAUTH_LOGIN_PROVIDER == 'reddit':
+    OAUTH_LOGIN_URL = '/accounts/reddit/login'
+elif OAUTH_LOGIN_PROVIDER == 'slack':
+    OAUTH_LOGIN_URL = '/accounts/slack/login'

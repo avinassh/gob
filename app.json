@@ -1,0 +1,24 @@
+{
+    "name": "gob",
+    "description": "gob is simple Django job board",
+    "repository": "https://github.com/avinassh/gob",
+    "keywords": ["python", "django", "job", "job board"],
+    "scripts": {
+        "postdeploy": "python manage.py migrate"
+    },
+    "env": {
+        "APP_SECRET_KEY": {
+            "description": "SECRET_KEY for Django's settings",
+            "generator": "secret"
+        },
+        "DJANGO_SETTINGS_MODULE": {
+            "description": "To decide which setting to use",
+            "value": "gob.settings.production"
+        },
+        "OAUTH_LOGIN_PROVIDER": {
+            "description": "Check readme. Either `slack` or `reddit` will do",
+            "value": "reddit"
+        }
+    },
+    "addons": ["heroku-postgresql"]
+}

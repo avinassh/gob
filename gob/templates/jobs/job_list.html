@@ -4,7 +4,7 @@
 <div class="tile is-ancestor">
   {% for job in object_list %}
   <div class="tile is-parent">
-    <article class="tile is-child box">
+    <article class="tile is-child box{% if not job.status %} notification is-grey{% endif %}">
       <div class="content">
         <p>{{ job.description }}</p>
       </div>

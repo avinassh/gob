@@ -147,44 +147,18 @@ elif OAUTH_LOGIN_PROVIDER == 'slack':
 
 # Set logger details
 # https://docs.djangoproject.com/en/1.10/topics/logging/
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
-    'formatters': {
-        'standard': {
-            'format': '%(levelname)s %(asctime)s %(name)s %(message)s'
-        },
-    },
     'handlers': {
-        'default': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'django_debug.log'),
-            'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
-            'formatter': 'standard',
-        },
-        'request_handler': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'django_request.log'),
-            'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
-            'formatter': 'standard',
+        'console': {
+            'class': 'logging.StreamHandler',
         },
     },
     'loggers': {
-        '': {
-            'handlers': ['default'],
-            'level': 'DEBUG',
-            'propagate': True
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
-        'django.request': {
-            'handlers': ['request_handler'],
-            'level': 'DEBUG',
-            'propagate': True
-        },
-    }
+    },
 }

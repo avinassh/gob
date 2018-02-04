@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.reddit',
+    'allauth.socialaccount.providers.slack',
 
     'gob',
     'gob.jobs'
@@ -125,3 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 SITE_ID = 1
+
+# Use either `slack` or `reddit` for login
+OAUTH_LOGIN_PROVIDER = 'reddit'
+SLACK_TEAM_ID = 'dev-s'

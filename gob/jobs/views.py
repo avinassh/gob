@@ -4,7 +4,7 @@ from django.conf import settings
 from django.http import HttpResponseBadRequest
 
 from gob.jobs.models import Job
-from gob.jobs.forms import JobCreateForm
+from gob.jobs.forms import JobCreateForm, JobUpdateForm
 
 
 class JobListView(ListView):
@@ -53,8 +53,9 @@ class JobCreateView(CreateView):
 
 class JobUpdateView(UpdateView):
     model = Job
-    form_class = JobCreateForm
+    form_class = JobUpdateForm
     success_url = '/'
+    template_name = 'jobs/job_form_update.html'
 
     def get_queryset(self):
         return super().get_queryset().filter(added_by=self.request.user)

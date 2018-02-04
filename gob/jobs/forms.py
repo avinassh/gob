@@ -25,3 +25,11 @@ class JobCreateForm(ModelForm):
         model = Job
         fields = ['company_name', 'description', 'location', 'salary_start',
                   'salary_end']
+
+
+class JobUpdateForm(JobCreateForm):
+
+    class Meta:
+        model = Job
+        fields = ['company_name', 'description', 'location', 'salary_start',
+                  'salary_end', 'status']

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post">
+  {% include "jobs/job_form_fields.html" %}
+  <div class="field">
+    <label class="label" for="id_status">Status: <input type="checkbox" name="status" id="id_status" {% if form.status.value %}checked{% endif %}></label>
+    <p class="help is-danger">Unchecking will result in unlisting the job</p>
+  </div>
+  <div class="field">
+    <div class="control">
+      <button class="button is-link">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

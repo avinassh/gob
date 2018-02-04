@@ -8,7 +8,7 @@
       <div class="content">
         <p>{{ job.description }}</p>
       </div>
-      <p>&#8377;{{ job.salary_start }}{% if job.salary_end %} - &#8377;{{ job.salary_end }}{% endif %} | <i class="fas fa-map-marker-alt"></i> {{ job.location }} | <a href="{{ job.message_url }}"><i class="fas fa-comments"></i></a>{% if job.added_by == user %} | <a href="{% url 'jobs:edit' job.id %}"><i class="fas fa-edit"></i></a>{% endif %}
+      <p>&#8377;{{ job.salary_start }}{% if job.salary_end %} - &#8377;{{ job.salary_end }}{% endif %}{% if job.company_name %} | <i class="fas fa-building"></i> {{ job.company_name }}{% endif %} | <i class="fas fa-map-marker-alt"></i> {{ job.location }} | <a href="{{ job.message_url }}"><i class="fas fa-comments"></i></a>{% if job.added_by == user %} | <a href="{% url 'jobs:edit' job.id %}"><i class="fas fa-edit"></i></a>{% endif %}
       </p>
     </article>
   </div>

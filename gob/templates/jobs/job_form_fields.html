@@ -9,7 +9,7 @@
   <div class="field">
     <label class="label" for="id_company_name">Company Name</label>
     <div class="control">
-      <input class="input" id="id_company_name" name="company_name" type="text" maxlength="80" placeholder="Name of the company" value="{{ form.company_name.value|default_if_none:'' }}">
+      <input class="input" id="id_company_name" name="company_name" type="text" maxlength="20" placeholder="Name of the company" value="{{ form.company_name.value|default_if_none:'' }}">
     </div>
   </div>
   <div class="field">
@@ -21,7 +21,7 @@
   <div class="field">
     <label class="label" for="id_location">Location</label>
     <div class="control">
-      <input class="input" id="id_location" name="location" type="text" maxlength="80" value="{{ form.location.value|default_if_none:'' }}" placeholder="Where it is located? or enter remote" required>
+      <input class="input" id="id_location" name="location" type="text" maxlength="20" value="{{ form.location.value|default_if_none:'' }}" placeholder="Where it is located? or enter remote" required>
     </div>
   </div>
   <div class="field">

@@ -9,6 +9,7 @@ class Job(TimeStampMixin):
     description = models.TextField(max_length=300)
     company_name = models.CharField(max_length=80, null=True)
     location = models.CharField(max_length=80)
-    salary = models.CharField()
+    salary_start = models.PositiveIntegerField()
+    salary_end = models.PositiveIntegerField(null=True)
 
     added_by = models.ForeignKey(User, on_delete=models.CASCADE)

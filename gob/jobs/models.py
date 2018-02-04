@@ -15,3 +15,6 @@ class Job(TimeStampMixin):
     message_url = models.URLField()
 
     added_by = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return F"{self.id} - {self.description[:10]}"

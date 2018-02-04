@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from gob.jobs.models import Job
+
+admin.site.register(Job)

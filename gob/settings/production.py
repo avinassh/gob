@@ -17,6 +17,15 @@ OAUTH_LOGIN_PROVIDER = os.environ['OAUTH_LOGIN_PROVIDER']
 if OAUTH_LOGIN_PROVIDER == 'slack':
     SLACK_TEAM_ID = os.environ['SLACK_TEAM_ID']
 
+# TODO:
+# /accounts/ is hardcoded here
+# this always assumes allauth URLs are set at /accounts/
+# any change here should also reflect in main `urls.py`
+if OAUTH_LOGIN_PROVIDER == 'reddit':
+    OAUTH_LOGIN_URL = '/accounts/reddit/login'
+elif OAUTH_LOGIN_PROVIDER == 'slack':
+    OAUTH_LOGIN_URL = '/accounts/slack/login'
+
 _db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES = {}
 DATABASES['default'] = {}

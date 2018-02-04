@@ -18,6 +18,9 @@
         "OAUTH_LOGIN_PROVIDER": {
             "description": "Check readme. Either `slack` or `reddit` will do",
             "value": "reddit"
+        },
+        "SLACK_TEAM_ID": {
+            "description": "Check readme. Enter your Slack team id"
         }
     },
     "addons": ["heroku-postgresql"]

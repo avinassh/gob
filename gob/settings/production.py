@@ -21,3 +21,6 @@ _db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES = {}
 DATABASES['default'] = {}
 DATABASES['default'].update(_db_from_env)
+
+# For Whitenoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

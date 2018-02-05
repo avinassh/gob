@@ -132,9 +132,11 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
 
-# Use either `slack` or `reddit` for login
-OAUTH_LOGIN_PROVIDER = 'reddit'
-SLACK_TEAM_ID = 'dev-s'
+# Set `OAUTH_LOGIN_PROVIDER` to either `slack` or `reddit` for login
+OAUTH_LOGIN_PROVIDER = os.environ['OAUTH_LOGIN_PROVIDER']
+
+if OAUTH_LOGIN_PROVIDER == 'slack':
+    SLACK_TEAM_ID = os.environ['SLACK_TEAM_ID']
 
 # TODO:
 # /accounts/ is hardcoded here

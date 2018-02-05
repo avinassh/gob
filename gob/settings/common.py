@@ -137,6 +137,13 @@ OAUTH_LOGIN_PROVIDER = os.environ['OAUTH_LOGIN_PROVIDER']
 
 if OAUTH_LOGIN_PROVIDER == 'slack':
     SLACK_TEAM_ID = os.environ['SLACK_TEAM_ID']
+    SOCIALACCOUNT_PROVIDERS = {
+        'slack': {
+            'AUTH_PARAMS': {
+                'team': SLACK_TEAM_ID
+            },
+        }
+    }
 
 # TODO:
 # /accounts/ is hardcoded here

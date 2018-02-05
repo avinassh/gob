@@ -136,11 +136,11 @@ LOGIN_URL = '/login'
 OAUTH_LOGIN_PROVIDER = os.environ['OAUTH_LOGIN_PROVIDER']
 
 if OAUTH_LOGIN_PROVIDER == 'slack':
-    SLACK_TEAM_ID = os.environ['SLACK_TEAM_ID']
+    SLACK_TEAM_SLUG = os.environ['SLACK_TEAM_SLUG']
     SOCIALACCOUNT_PROVIDERS = {
         'slack': {
             'AUTH_PARAMS': {
-                'team': SLACK_TEAM_ID
+                'team': os.environ['SLACK_TEAM_ID']
             },
         }
     }

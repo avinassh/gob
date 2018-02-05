@@ -46,7 +46,7 @@ class JobCreateView(CreateView):
             return
         if social_account.provider == 'slack':
             uid = social_account.extra_data['user']['id']
-            return F"https://{settings.SLACK_TEAM_ID}.slack.com/messages/{uid}"
+            return F"https://{settings.SLACK_TEAM_SLUG}.slack.com/messages/{uid}"  # noqa
         elif social_account.provider == 'reddit':
             uid = self.request.user.username
             return F"https://www.reddit.com/message/compose/?to={uid}"

@@ -21,6 +21,9 @@
         },
         "SLACK_TEAM_ID": {
             "description": "Check readme. Enter your Slack team id"
+        },
+        "SLACK_TEAM_SLUG": {
+            "description": "Check readme. Enter your Slack team slug"
         }
     },
     "addons": ["heroku-postgresql"]

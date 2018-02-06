@@ -16,6 +16,8 @@
   </div>
   <div class="tile is-ancestor">
   {% endif %}
+  {% empty %}
+    <p>You have not posted any jobs.</p>
   {% endfor %}
 </div>
 {% endblock %}

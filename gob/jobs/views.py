@@ -11,7 +11,8 @@ class JobListView(ListView):
     model = Job
 
     def get_queryset(self):
-        return super().get_queryset().filter(status=True)
+        return super().get_queryset().filter(status=True).order_by(
+            '-updated_on')
 
 
 # List jobs by the current logged in user

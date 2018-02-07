@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.reddit',
     'allauth.socialaccount.providers.slack',
+    'django_markdown2',
 
     'gob',
     'gob.jobs'

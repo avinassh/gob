@@ -15,7 +15,7 @@
   <div class="field">
     <label class="label" for="id_description">Description</label>
     <div class="control">
-      <textarea class="textarea" id="id_description" name="description" maxlength="160" placeholder="Enter job description" required>{{ form.description.value|default_if_none:'' }}</textarea>
+      <textarea class="textarea" id="id_description" name="description" maxlength="160" placeholder="Enter job description (supports markdown)" required>{{ form.description.value|default_if_none:'' }}</textarea>
     </div>
   </div>
   <div class="field">

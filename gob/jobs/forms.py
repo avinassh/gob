@@ -6,6 +6,7 @@ from gob.jobs.models import Job
 
 class JobCreateForm(ModelForm):
     company_name = forms.CharField(required=False, max_length=20)
+    email = forms.EmailField(required=False, max_length=300)
     location = forms.CharField(required=True, max_length=20)
     description = forms.CharField(required=True, max_length=160)
     salary_end = forms.IntegerField(required=False)
@@ -26,7 +27,7 @@ class JobCreateForm(ModelForm):
     class Meta:
         model = Job
         fields = ['company_name', 'description', 'location', 'salary_start',
-                  'salary_end']
+                  'salary_end', 'email']
 
 
 class JobUpdateForm(JobCreateForm):
@@ -34,4 +35,4 @@ class JobUpdateForm(JobCreateForm):
     class Meta:
         model = Job
         fields = ['company_name', 'description', 'location', 'salary_start',
-                  'salary_end', 'status']
+                  'salary_end', 'status', 'email']

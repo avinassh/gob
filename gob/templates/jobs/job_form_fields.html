@@ -35,3 +35,9 @@
       <input class="input" id="id_salary_end" name="salary_end" type="number" value="{{ form.salary_end.value }}" placeholder="(Optional) Enter salary end range">
     </div>
   </div>
+  <div class="field">
+    <label class="label" for="id_email">Email</label>
+    <div class="control">
+      <input class="input" id="id_email" name="email" type="email" maxlength="300" placeholder="(Optional) Your contact email" value="{{ form.email.value|default_if_none:'' }}">
+    </div>
+  </div>
